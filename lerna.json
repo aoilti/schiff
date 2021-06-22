@@ -1,0 +1,19 @@
+{
+  "npmClient": "yarn",
+  "version": "0.0.1-beta.0",
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "conventionalCommits": true,
+      "gitTagVersion": false,
+      "push": false,
+      "yes": true
+    },
+    "publish": {
+      "ignoreChanges": ["*.md"],
+      "verifyAccess": false,
+      "verifyRegistry": false,
+      "message": "chore: release %s"
+    }
+  }
+}
