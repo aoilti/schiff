@@ -2,5 +2,20 @@
   "name": "@schiff/utils",
   "version": "0.0.0-beta.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",  "files": [
+    "lib",
+    "bin",
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aoilti/schiff.git"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "build": "echo \"no build for @schiff/utils\""
+  }
 }
