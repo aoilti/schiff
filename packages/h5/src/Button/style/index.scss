@@ -1,0 +1,667 @@
+// @import '../../style/index.scss';
+@import '@schiff/utils/style/index';
+
+$buttonPrefixCls: mui_button;
+
+$button-color-blue: #0052ff;
+$button-color-blue-active: #4d86ff;
+$button-color-blue-disabled: #eeeff7;
+
+// 和gray一样
+$button-color-bluegray: #f2f4f8;
+$button-color-bluegray-active: #e8eaee;
+$button-color-bluegray-disabled: #f2f4f8;
+
+$button-color-white: #fff;
+$button-color-white-active: #ededed;
+$button-color-white-disabled: #eeeff7;
+
+// $button-color-gold: #E2BB7C;
+// $button-color-gold-active: #CAA76F;
+// $button-color-gold-disabled: #F8EFE0;
+
+$button-color-orange: #ffa408;
+$button-color-orange-active: #f09a07;
+$button-color-orange-disabled: #ffe9c4;
+
+$button-color-red: #fb6b58;
+$button-color-red-active: #e76251;
+$button-color-red-disabled: #ffdcd8;
+
+$button-color-black: #15161f;
+$button-color-black-active: #5b5c61;
+$button-color-black-disabled: #eeeff7;
+
+$button-color-gray: #f4f5fa;
+$button-color-gray-active: #e2e3e8;
+$button-color-gray-disabled: #eeeff7;
+
+$button-color-gold: #e4cfa7;
+$button-color-gold-active: #d4c09b;
+$button-color-gold-disabled: #eeeff7;
+
+// 按钮大小
+$button-size-s: 12 * $unit;
+$button-size-xs: 13 * $unit;
+$button-size-m: 13 * $unit;
+$button-size-xl: 18 * $unit;
+$button-size-l: 17 * $unit;
+
+@mixin fixed($w) {
+  width: $w * $unit;
+  @include ellipsis();
+  padding: 0;
+}
+
+@mixin height_vertical_center($height) {
+  height: $height * $unit;
+  vertical-align: middle;
+}
+
+@mixin large_round() {
+  border-radius: 26px;
+}
+
+@mixin huge_round() {
+  border-radius: 35px;
+}
+
+@mixin border($width, $color) {
+  border-width: $width * $unit;
+  border-color: $color;
+  border-style: solid;
+}
+
+.button-size-s {
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  border-radius: 14 * $unit;
+  font-size: $button-size-s;
+  @include height_vertical_center(28);
+}
+
+@mixin size($size) {
+  @if $size == 's' or $size == 'xs' {
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    border-radius: 14 * $unit;
+    font-size: $button-size-s;
+    @include height_vertical_center(28);
+  } @else if $size == 'm' {
+    border-radius: 18 * $unit;
+    font-size: $button-size-m;
+    @include height_vertical_center(36);
+  } @else if $size == 'l' {
+    border-radius: 22 * $unit;
+    font-size: 13 * $unit;
+    @include height_vertical_center(44);
+  } @else if $size == 'xl' {
+    border-radius: 22 * $unit;
+    font-size: 14 * $unit;
+    @include height_vertical_center(44);
+  } @else if $size == 'xxl' {
+    font-size: 19 * $unit;
+    @include height_vertical_center(60);
+  }
+}
+
+@mixin exact($size) {
+  @if $size == 's' {
+    padding-left: 14 * $unit;
+    padding-right: 14 * $unit;
+    min-width: 76 * $unit;
+    max-width: 100 * $unit;
+    @include ellipsis();
+  } @else if $size == 'm' {
+    padding-left: 12 * $unit;
+    padding-right: 12 * $unit;
+    min-width: 92 * $unit;
+    max-width: 102 * $unit;
+    @include ellipsis();
+  } @else if $size == 'l' {
+    padding-left: 20 * $unit;
+    padding-right: 20 * $unit;
+    min-width: 128 * $unit;
+    max-width: 128 * $unit;
+    @include ellipsis();
+  }
+}
+
+@mixin block() {
+  width: calc(100vw - 175 * $unit);
+  font-size: 14px;
+  padding-left: 30 * $unit;
+  padding-right: 30 * $unit;
+  @include ellipsis();
+}
+
+@mixin active_disabled($prefixCls, $active, $disabled) {
+  &.#{$prefixCls}_active {
+    background-color: $active;
+  }
+  &.#{$prefixCls}_disabled {
+    background-color: $disabled;
+  }
+}
+
+.#{$buttonPrefixCls} {
+  font-family: PingFangSC-Medium, PingFang SC;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  // pointer-events: none;
+  // -webkit-touch-callout:none;
+  // -moz-touch-callout:none;
+  // -ms-touch-callout:none;
+  // touch-callout: none;
+  outline: none;
+  border: none;
+  border: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 4 * $unit;
+  box-shadow: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  &:focus {
+    // outline: none;
+    // border-style: outset;
+    // box-shadow: none;
+  }
+  -webkit-tap-highlight-color: 'red';
+  &:active {
+    outline: none;
+    border-style: outset;
+    box-shadow: none;
+  }
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &_xs_fixed_blue {
+    background-color: $button-color-blue;
+    font-size: $button-size-xs;
+    color: $white;
+    @include size('s');
+    @include fixed(52);
+    &.#{$buttonPrefixCls}_active {
+      background-color: $button-color-blue-active;
+    }
+    &.#{$buttonPrefixCls}_disabled {
+      background-color: $button-color-blue-disabled;
+    }
+  }
+  &_xl_exact_blue {
+    background-color: $button-color-blue;
+    color: $white;
+    @include size('xl');
+    @include exact('xl');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-blue-active,
+      $button-color-blue-disabled
+    );
+  }
+  &_xl_block_blue {
+    background-color: $button-color-blue;
+    color: $white;
+    @include size('xl');
+    @include block();
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-blue-active,
+      $button-color-blue-disabled
+    );
+  }
+  &_xl_exact_gray {
+    background-color: $button-color-bluegray;
+    color: #666;
+    @include size('xl');
+    @include exact('xl');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-bluegray-active,
+      $button-color-bluegray-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #c9ced9;
+    }
+  }
+  &_xl_exact_gold {
+    background-color: $button-color-gold;
+    color: #724804;
+    @include size('xl');
+    @include exact('xl');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gold-active,
+      $button-color-gold-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d7c6ab;
+    }
+  }
+  &_xl_block_gold {
+    background-color: $button-color-gold;
+    color: #724804;
+    @include size('xl');
+    @include block();
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gold-active,
+      $button-color-gold-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d7c6ab;
+    }
+  }
+  &_xl_exact_orange {
+    background-color: $button-color-orange;
+    color: #fff;
+    @include size('xl');
+    @include exact('xl');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-orange-active,
+      $button-color-orange-disabled
+    );
+  }
+  &_xl_block_orange {
+    background-color: $button-color-orange;
+    color: #fff;
+    @include size('xl');
+    @include block();
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-orange-active,
+      $button-color-orange-disabled
+    );
+  }
+  &_l_fixed_blue {
+    background-color: $button-color-blue;
+    color: $white;
+    @include size('l');
+    @include fixed(200);
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-blue-active,
+      $button-color-blue-disabled
+    );
+  }
+  &_xl_block_blue_round {
+    background-color: $button-color-blue;
+    color: $white;
+    @include size('xl');
+    @include block();
+    @include large_round();
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-blue-active,
+      $button-color-blue-disabled
+    );
+  }
+  &_xxl_block_red_round {
+    background-color: $button-color-red;
+    color: $white;
+    @include size('xxl');
+    @include block();
+    @include huge_round();
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-red-active,
+      $button-color-red-disabled
+    );
+  }
+  &_xl_block_black_round {
+    background-color: $button-color-black;
+    color: $white;
+    @include size('xl');
+    @include block();
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-black-active,
+      $button-color-black-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_xl_block_gray_round {
+    background-color: $button-color-gray;
+    color: $blank;
+    @include size('xl');
+    @include block();
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gray-active,
+      $button-color-gray-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_xl_block_white_round {
+    background-color: $button-color-white;
+    color: $blank;
+    @include size('xl');
+    @include block();
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-white-active,
+      $button-color-white-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_xl_block_gold_round {
+    background-color: $button-color-gold;
+    color: $gold;
+    @include size('xl');
+    @include block();
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gold-active,
+      $button-color-gold-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_l_exact_black_round {
+    background-color: $button-color-black;
+    color: $white;
+    @include size('l');
+    @include exact('l');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-black-active,
+      $button-color-black-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_l_exact_gray_round {
+    background-color: $button-color-gray;
+    color: $blank;
+    @include size('l');
+    @include exact('l');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gray-active,
+      $button-color-gray-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_l_exact_white_round {
+    background-color: $button-color-white;
+    color: $blank;
+    @include size('l');
+    @include exact('l');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-white-active,
+      $button-color-white-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_l_exact_gold_round {
+    background-color: $button-color-gold;
+    color: $gold;
+    @include size('l');
+    @include exact('l');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gold-active,
+      $button-color-gold-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_m_exact_black_round {
+    background-color: $button-color-black;
+    color: $white;
+    @include size('m');
+    @include exact('m');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-black-active,
+      $button-color-black-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_m_exact_gray_round {
+    background-color: $button-color-gray;
+    color: $blank;
+    @include size('m');
+    @include exact('m');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gray-active,
+      $button-color-gray-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_m_exact_white_round {
+    background-color: $button-color-white;
+    color: $blank;
+    @include size('m');
+    @include exact('m');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-white-active,
+      $button-color-white-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_m_exact_gold_round {
+    background-color: $button-color-gold;
+    color: $gold;
+    @include size('m');
+    @include exact('m');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gold-active,
+      $button-color-gold-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_s_exact_black_round {
+    background-color: $button-color-black;
+    color: $white;
+    @include size('s');
+    @include exact('s');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-black-active,
+      $button-color-black-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_s_exact_gray_round {
+    background-color: $button-color-gray;
+    color: $blank;
+    @include size('s');
+    @include exact('s');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gray-active,
+      $button-color-gray-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_s_exact_white_round {
+    background-color: $button-color-white;
+    color: $blank;
+    @include size('s');
+    @include exact('s');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-white-active,
+      $button-color-white-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_s_exact_gold_round {
+    background-color: $button-color-gold;
+    color: $gold;
+    @include size('s');
+    @include exact('s');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gold-active,
+      $button-color-gold-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_s_exact_blue_round {
+    background-color: $button-color-blue;
+    color: $white;
+    @include size('s');
+    @include exact('s');
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-blue-active,
+      $button-color-blue-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_xs_fixed_black_round {
+    background-color: $button-color-black;
+    color: $white;
+    @include size('xs');
+    @include fixed(52);
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-black-active,
+      $button-color-black-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_xs_fixed_gray_round {
+    background-color: $button-color-gray;
+    color: $blank;
+    @include size('xs');
+    @include fixed(52);
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gray-active,
+      $button-color-gray-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_xs_fixed_white_round {
+    background-color: $button-color-white;
+    color: $blank;
+    @include size('xs');
+    @include fixed(52);
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-white-active,
+      $button-color-white-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_xs_fixed_blue_round {
+    background-color: $button-color-blue;
+    color: $white;
+    @include size('xs');
+    @include fixed(52);
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-blue-active,
+      $button-color-blue-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+  &_xs_fixed_gold_round {
+    background-color: $button-color-gold;
+    color: $gold;
+    @include size('xs');
+    @include fixed(52);
+    @include active_disabled(
+      $buttonPrefixCls,
+      $button-color-gold-active,
+      $button-color-gold-disabled
+    );
+    &.#{$buttonPrefixCls}_disabled {
+      color: #d1d3de;
+    }
+  }
+}
+
+.lightblue {
+  color: #fff;
+  background-color: #6a9bff;
+}
+.lightblue-active {
+  background-color: #5f8be5;
+}
+
+@mixin round-borders($radius: 4px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+.mui-primary:focus {
+  outline: none;
+}
+.mui-short:focus {
+  outline: none;
+}
+
+.mui-short {
+  border-radius: 8px;
+  padding: 12px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  color: #fff;
+  background-color: #3b7aff;
+  border-radius: 4px;
+  min-width: 52px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 400;
+  font-size: 18px;
+  width: 160px;
+  height: 52px;
+  background: rgba(59, 122, 255, 1);
+  border-radius: 6px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  border: none;
+}
