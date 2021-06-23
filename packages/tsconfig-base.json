@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "commonjs",
+    "declaration": true,
+    "jsx": "react",
+    "declarationMap": true,
+    "sourceMap": true,
+    "composite": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@schiff/*": ["./packages/*/src"]
+    }
+  }
+}

@@ -17,7 +17,10 @@
   },
   "scripts": {
     "pub": "npm publish",
-    "build": "echo \"no build for @schiff/h5\"",
+    "build": "tsc",
     "#start": "dumi dev"
+  },
+  "dependencies": {
+    "@schiff/utils": "0.0.0-beta.0"
   }
 }

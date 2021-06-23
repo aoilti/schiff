@@ -128,7 +128,7 @@ $button-size-l: 17 * $unit;
 }
 
 @mixin block() {
-  width: calc(100vw - 175 * $unit);
+  width: calc(100vw - 175);
   font-size: 14px;
   padding-left: 30 * $unit;
   padding-right: 30 * $unit;
