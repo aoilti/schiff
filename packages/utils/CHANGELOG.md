@@ -5,8 +5,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [0.0.0-beta.3](https://github.com/aoilti/schiff/compare/v0.0.0-beta.1...v0.0.0-beta.3) (2021-06-23)
 
-**Note:** Version bump only for package @schiff/utils
+**Note:** Version bump only for package wheat-devkits2
 
 # 0.0.0-beta.1 (2021-06-23)
 
-**Note:** Version bump only for package @schiff/utils
+**Note:** Version bump only for package wheat-devkits2
