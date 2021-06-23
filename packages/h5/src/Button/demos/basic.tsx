@@ -1,4 +1,4 @@
-import { Button } from '@schiff/h5';
+import { Button } from 'wheat-devkits';
 import { Component } from 'react';
 
 export default class ButtonCmp extends Component {
