@@ -34,8 +34,12 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
     "@umijs/plugin-sass": "^1.1.1",
     "@umijs/test": "^3.0.5",
+    "@worktile-devkit/pm": "^1.0.0-beta.23",
+    "@worktile/devkit": "^0.3.3",
     "dumi": "^1.0.10",
     "dumi-theme-mobile": "^1.0.12",
     "father-build": "^1.17.2",
@@ -44,8 +48,7 @@
     "less-loader": "^10.0.0",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
-    "@worktile-devkit/pm": "^1.0.0-beta.23",
-    "@worktile/devkit": "^0.3.3",
+    "react": "^17.0.2",
     "yorkie": "^2.0.0"
   }
 }

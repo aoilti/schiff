@@ -16,13 +16,11 @@
     "url": "git+https://github.com/aoilti/schiff.git"
   },
   "scripts": {
-    "pub": "npm publish",
+    "pub": "npm publish --access=public",
     "build": "tsc",
     "#start": "dumi dev"
   },
   "dependencies": {
-    "@schiff/utils": "^0.0.0-beta.3",
-    "@types/react": "16.14.2",
-    "@types/react-dom": "16.9.8"
+    "@schiff/utils": "^0.0.0-beta.3"
   }
 }
