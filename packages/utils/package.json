@@ -1,8 +1,9 @@
 {
   "name": "@schiff/utils",
-  "version": "0.0.0-beta.0",
+  "version": "0.0.0-beta.1",
   "main": "index.js",
-  "license": "MIT",  "files": [
+  "license": "MIT",
+  "files": [
     "lib",
     "bin",
     "index.js"
