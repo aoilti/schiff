@@ -1,5 +1,5 @@
 {
-  "name": "wheat-devkits",
+  "name": "@schiff/h5",
   "version": "1.1.1",
   "license": "MIT",
   "main": "dist/index.js",
@@ -20,6 +20,6 @@
     "#start": "dumi dev"
   },
   "dependencies": {
-    "wheat-devkits2": "^1.1.1"
+    "@schiff/utils": "^1.1.1"
   }
 }

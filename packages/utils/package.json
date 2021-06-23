@@ -1,5 +1,5 @@
 {
-  "name": "wheat-devkits2",
+  "name": "@schiff/utils",
   "version": "1.1.1",
   "main": "index.js",
   "license": "MIT",
@@ -17,6 +17,6 @@
   },
   "scripts": {
     "pub": "npm publish",
-    "build": "echo \"no build for wheat-devkits2\""
+    "build": "echo \"no build for @schiff/utils\""
   }
 }
