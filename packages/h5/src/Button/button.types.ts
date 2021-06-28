@@ -1,7 +1,7 @@
-import { CSSProperties, MouseEvent } from 'react';
+import React, { CSSProperties, MouseEvent } from 'react';
 
 /**
- * 按钮API
+ * Button properties.
  */
 export interface ButtonPropTypes {
   hoverStartTime?: number;
@@ -12,18 +12,18 @@ export interface ButtonPropTypes {
    */
   type: ButtonTypes;
   /**
-   * @description 是否加载中
+   * 是否加载中
    */
   loading?: boolean;
   activeStyle?: CSSProperties;
   className?: string;
   disabled?: boolean;
   /**
-   * @description 按钮图标
+   * 按钮图标
    */
   icon?: React.ReactElement;
   /**
-   * @description 按钮点击事件
+   * 按钮点击事件
    */
   onClick?: (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
   children?: React.ReactNode;

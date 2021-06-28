@@ -9,11 +9,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.1.1](https://github.com/aoilti/schiff/compare/v0.0.0-beta.3...v1.1.1) (2021-06-23)
 
-**Note:** Version bump only for package wheat-devkits
+**Note:** Version bump only for package @schiff/h5
 
 # [0.0.0-beta.3](https://github.com/aoilti/schiff/compare/v0.0.0-beta.1...v0.0.0-beta.3) (2021-06-23)
 
-**Note:** Version bump only for package wheat-devkits
+**Note:** Version bump only for package @schiff/h5
 
 # 0.0.0-beta.1 (2021-06-23)
 
