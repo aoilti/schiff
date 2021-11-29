@@ -8,6 +8,6 @@ export enum ButtonInsideIconColor {
   'gray' = '#151612',
   'black' = '#FFFFFF',
   'gold' = '#E4CF00',
-  'blue' = '#FFF',
+  'blue' = '#FFFFFF',
   'disabled' = '#D1D3DE',
 }
