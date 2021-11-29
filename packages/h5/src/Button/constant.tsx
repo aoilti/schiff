@@ -6,8 +6,8 @@ export enum ButtonInsideIconSize {
 export enum ButtonInsideIconColor {
   'white' = '#15161F',
   'gray' = '#151612',
-  'black' = '#FFFFDF',
-  'gold' = '#E4CFA7',
+  'black' = '#FFFFFF',
+  'gold' = '#E4CF00',
   'blue' = '#FFF',
   'disabled' = '#D1D3DE',
 }
