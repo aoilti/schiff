@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/aoilti/schiff/compare/v1.1.3...v1.1.5) (2021-11-29)
+
+### Bug Fixes
+
+- **button:** 修复 button 配色 2 ([70b32e9](https://github.com/aoilti/schiff/commit/70b32e9f6c9e2c87fe4f0fb03c8e07c2d5d4e69e))
+
+### Features
+
+- **button:** 修改 button 配色 2 ([2a6d3dc](https://github.com/aoilti/schiff/commit/2a6d3dc807a43b398cebae4dcdae6f9d0364bcca))
+- **button:** 修改 button 配色 3333 ([#8](https://github.com/aoilti/schiff/issues/8)) ([4485a20](https://github.com/aoilti/schiff/commit/4485a2016d2749326bd363936b9bc6cdc3845729))
+
 ## [1.1.4](https://github.com/aoilti/schiff/compare/v1.1.3...v1.1.4) (2021-11-29)
 
 ### Bug Fixes
